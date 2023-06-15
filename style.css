@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #002b5c;
+    background-color: #A0A0A0;
+    background-image: url(itu-logo.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -14,22 +18,20 @@ body {
     width: 400px;
     padding: 20px;
     text-align: center;
-    background-color: #fff;
-    color: #002b5c;
 }
 
 h1 {
-    color: #002b5c;
+    color: #fff;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #002b5c;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .description {
-    color: #002b5c;
+    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -37,7 +39,7 @@ label {
     display: block;
     text-align: center;
     margin-bottom: 5px;
-    color: #002b5c;
+    color: #fff;
 }
 
 input[type="number"],
@@ -47,14 +49,14 @@ select {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: #002b5c;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 button {
     padding: 12px 20px;
-    background-color: #002b5c;
-    color: #fff;
+    background-color: #fff;
+    color: #002b5c;
     border: none;
     border-radius: 4px;
     cursor: pointer;
