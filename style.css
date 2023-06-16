@@ -1,17 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #A0A0A0;
+    background-color: #808080;
     background-image: url(itu-logo.webp);
-    background-repeat: no-repeat;
-    background-size: contain;
     background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     color: #fff;
     display: flex;
-    align-items: center;
+    align-items: flex-start; 
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh; 
 }
 
 .container {
@@ -36,10 +37,19 @@ label {
     display: block;
     text-align: center;
     margin-bottom: 5px;
-}
+}   
 
 input[type="number"],
 select {
+    padding: 8px;
+    width: 25%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+input[type="text"] {
     padding: 8px;
     width: 25%;
     box-sizing: border-box;
@@ -57,19 +67,26 @@ button {
     cursor: pointer;
 }
 
-#sonuc {
+#result {
     font-weight: bold;
     margin-top: 10px;
     text-align: center;
-    color: #002b5c;
+    color: #fff;
 }
 
-#ders-listesi {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 10px;
+#lesson-list {
+    margin-bottom: 10px; 
+    list-style-type: none;
 }
 
-#ders-listesi li {
-    margin-bottom: 5px;
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    select {
+        width: 100%;
+    }
 }

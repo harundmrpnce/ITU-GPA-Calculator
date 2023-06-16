@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ortalama Hesaplama</title>
+    <title>ITU Ortalama Hesaplama</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <div class="container">
         <h1>Ortalama Hesaplama</h1>
         
         <p class="description">Bu site, İstanbul Teknik Üniversitesi öğrencileri için genel not ortalaması hesaplamak amacıyla kullanılmaktadır.</p>
-        
+        <p>0.01-0.02 puan hata payı olabilir.</p>
+
         <h2>Geçmiş Dönem Bilgileri</h2>
-        <label for="gecmis-kredi">Geçmiş Dönemlerde Alınan Toplam Kredi</label>
-        <input type="number" id="gecmis-kredi" min="0"><br>
-        <label for="gecmis-ortalama">Geçmiş Dönemlerin Ortalaması</label>
-        <input type="number" id="gecmis-ortalama" step="0.01" min="0"><br>
+        <label for="previous-credit">Geçmiş Dönemlerde Alınan Toplam Kredi</label>
+        <input type="number" id="previous-credit" min="0"><br>
+        <label for="previous-average">Geçmiş Dönemlerin Ortalaması</label>
+        <input type="number" id="previous-average" step="0.01" min="0"><br>
 
-        <button id="ders-ekle" onclick="dersEkle()">Ders Ekle</button>
+        <button id="add-lesson" onclick="addLesson()">Ders Ekle</button>
         
-        <ul id="ders-listesi"></ul>
-
-        <button id="hesapla" onclick="hesapla()">Hesapla</button>
-        <p id="sonuc"></p>
+        <div id="lesson-list"></div>
+        
+        <p id="result"></p>
     </div>
 </body>
 </html>
