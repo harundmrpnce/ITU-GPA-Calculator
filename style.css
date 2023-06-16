@@ -15,23 +15,20 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 600px;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    color: #fff;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #fff;
     margin-bottom: 10px;
 }
 
 .description {
-    color: #fff;
     margin-bottom: 20px;
 }
 
@@ -39,18 +36,16 @@ label {
     display: block;
     text-align: center;
     margin-bottom: 5px;
-    color: #fff;
 }
 
 input[type="number"],
 select {
     padding: 8px;
-    width: 100%;
+    width: 25%;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: #fff;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 button {
@@ -73,7 +68,6 @@ button {
     list-style: none;
     padding: 0;
     margin-bottom: 10px;
-    text-align: left;
 }
 
 #ders-listesi li {

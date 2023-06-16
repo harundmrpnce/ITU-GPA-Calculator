@@ -17,13 +17,11 @@
         <label for="gecmis-ortalama">Geçmiş Dönemlerin Ortalaması</label>
         <input type="number" id="gecmis-ortalama" step="0.01" min="0"><br>
 
-        <h2>Ders Bilgileri</h2>
-        <label for="ders-sayisi">Ders Sayısı</label>
-        <input type="number" id="ders-sayisi" min="1"><br>
+        <button id="ders-ekle" onclick="dersEkle()">Ders Ekle</button>
         
         <ul id="ders-listesi"></ul>
 
-        <button id="hesapla">Hesapla</button>
+        <button id="hesapla" onclick="hesapla()">Hesapla</button>
         <p id="sonuc"></p>
     </div>
 </body>
