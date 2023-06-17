@@ -87,11 +87,13 @@ button {
 @media (max-width: 600px) {
     .container {
         width: 100%;
+        margin: 0 auto;
     }
 
     input[type="number"],
     input[type="text"],
     select {
         width: 100%;
+        margin: 10px 0;
     }
 }
