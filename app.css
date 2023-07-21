@@ -1,0 +1,262 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p,
+a, img, strong, ol, ul, li, form, label, footer, header, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0
+}
+
+ol, ul {
+	list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 200,
+    'opsz' 48
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    background: url(itu-logo.webp) center / contain no-repeat;
+    background-attachment: fixed;
+    background-color: #7f7f80;
+    color: #fff;
+}
+
+main {
+    width: 650px;
+}
+
+.head {
+    margin: 32px 0;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.text {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.content {
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+.content .head {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.pre {
+    margin: 20px 0 14px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.info {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.input {
+    color: #002857;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px;
+    font-size: 16px;
+    padding: 3px 0;
+    width: 140px;
+}
+
+.add {
+    font-weight: 800;
+    padding: 11px;
+    border-radius: 16px;
+    color: #002857;
+    margin-bottom: 24px;
+    transition: all 200ms ease-in-out;
+}
+
+.add:hover {
+    background-color: #002857;
+    color: #fff;
+}
+
+.lesson-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lesson:first-child {
+    border-top: #fff 1px solid;
+}
+
+.lesson {   
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: #fff 1px solid;
+    padding: 18px 0;
+}
+
+.lesson-item {
+    box-shadow: 5px 5px 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.select {
+    width: 80px;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 2px 4px;
+}
+
+.retake-label {
+    background-color: #fff;
+    color: #002857;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+.retake-label:hover {
+    background-color: #002857;
+    color: white;
+    box-shadow: none;
+}
+
+.checkbox {
+    display: none;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #002857;
+    transition: all 200ms ease-in-out;
+}
+
+.icon:hover {
+    background-color: #002857;
+    color: #fff;
+    box-shadow: none;
+}
+
+#result {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+@media (min-width: 601px) {
+    .lesson-item {
+        margin-right: 20px;
+    }
+
+    .lesson .input{
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-size: 85%;
+    }
+    
+    main {
+        width: 500px;
+    }
+
+    .head {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .content .head {
+        font-size: 20px;
+    }
+
+    .pre {
+        font-size: 16px;
+    }
+
+    .input {
+        width: 100px;
+    }
+
+    .lesson:first-child {
+        border-top: #fff 1px solid;
+        padding-top: 30px;
+    }
+
+    .lesson {
+        display: grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-gap: 12px;
+        justify-items: center;
+        margin-bottom: 40px;
+        border-bottom: #fff 1px solid;
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+
+    .lesson:last-child {
+        margin-bottom: 1px;
+    }
+
+    .lesson-item {
+        text-align: center;
+    }
+
+    .select {
+        width: 100px;
+    }
+
+    .retake-check {
+        width: 120px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 432px) {
+    main {
+        width: 350px;
+    }
+
+    .lesson {
+        width: 300px;
+        grid-template-columns: repeat(3, 96px);
+    }
+
+    .lesson .input {
+        width: 80px;
+    }
+
+    .select {
+        width: 75px;
+    }
+
+    .lesson-item {
+        font-size: 16px;
+    }
+}
