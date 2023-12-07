@@ -8,6 +8,36 @@ lessons.addEventListener("change", calculateAverage);
 document.querySelector(".credit").addEventListener("input", calculateAverage);
 document.querySelector(".average").addEventListener("input", calculateAverage);
 
+const grades = `
+<option value="0">Not</option>
+<option value="4">AA</option>
+<option value="3.75">BA+</option>
+<option value="3.5">BA</option>
+<option value="3.25">BB+</option>
+<option value="3">BB</option>
+<option value="2.75">CB+</option>
+<option value="2.5">CB</option>
+<option value="2.25">CC+</option>
+<option value="2">CC</option>
+<option value="1.75">DC+</option>
+<option value="1.5">DC</option>
+<option value="1.25">DD+</option>
+<option value="1">DD</option>
+<option value="0">FF</option>
+`
+const credits = `
+    <option value="0">Kredi</option>
+    <option value="1">1</option>
+    <option value="1.5">1.5</option>
+    <option value="2">2</option>
+    <option value="2.5">2.5</option>
+    <option value="3">3</option>
+    <option value="3.5">3.5</option>
+    <option value="4">4</option>
+    <option value="4.5">4.5</option>
+    <option value="5">5</option>
+`
+
 function updateHtml() {
     const lessonDiv = document.createElement("div");
     lessonDiv.classList.add("lesson");
@@ -22,33 +52,12 @@ function updateHtml() {
     const lessonGrade = document.createElement("select");
     lessonGrade.name = "lesson-grade-" + index;
     lessonGrade.classList.add("select", "lesson-item", "lesson-grade");
-    lessonGrade.innerHTML = `
-        <option value="0">Not</option>
-        <option value="4">AA</option>
-        <option value="3.5">BA</option>
-        <option value="3">BB</option>
-        <option value="2.5">CB</option>
-        <option value="2">CC</option>
-        <option value="1.5">DC</option>
-        <option value="1">DD</option>
-        <option value="0">FF</option>
-    `;
+    lessonGrade.innerHTML = grades;
     
     const lessonCredit = document.createElement("select");
     lessonCredit.name = "lesson-credit-" + index;
     lessonCredit.classList.add("select", "lesson-item", "lesson-credit");
-    lessonCredit.innerHTML = `
-        <option value="0">Kredi</option>
-        <option value="1">1</option>
-        <option value="1.5">1.5</option>
-        <option value="2">2</option>
-        <option value="2.5">2.5</option>
-        <option value="3">3</option>
-        <option value="3.5">3.5</option>
-        <option value="4">4</option>
-        <option value="4.5">4.5</option>
-        <option value="5">5</option>
-    `;
+    lessonCredit.innerHTML = credits;
 
     const removeButton = document.createElement("span");
     removeButton.innerText = "delete";
@@ -81,17 +90,7 @@ function updateHtml() {
         }
     })
 
-    retakeGrade.innerHTML = `
-        <option value="0">Eski Not</option>
-        <option value="4">AA</option>
-        <option value="3.5">BA</option>
-        <option value="3">BB</option>
-        <option value="2.5">CB</option>
-        <option value="2">CC</option>
-        <option value="1.5">DC</option>
-        <option value="1">DD</option>
-        <option value="0">FF</option>
-    `;
+    retakeGrade.innerHTML = grades;
 
     lessonDiv.append(lessonName, lessonGrade, lessonCredit, retakeLabel, checkbox, retakeGrade, removeButton);
     index++;
