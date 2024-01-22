@@ -3,10 +3,14 @@ const lessons = document.querySelector(".lesson-list");
 const addButton = document.querySelector(".add");
 
 addButton.addEventListener("click", updateHtml);
-addButton.addEventListener("click", calculateAverage);
-lessons.addEventListener("change", calculateAverage);
-document.querySelector(".credit").addEventListener("input", calculateAverage);
-document.querySelector(".average").addEventListener("input", calculateAverage);
+addButton.addEventListener("click", calculateGeneralAverage);
+addButton.addEventListener("click", calculateTermAverage);
+lessons.addEventListener("change", calculateGeneralAverage);
+lessons.addEventListener("change", calculateTermAverage);
+document.querySelector(".credit").addEventListener("input", calculateGeneralAverage);
+document.querySelector(".credit").addEventListener("input", calculateTermAverage);
+document.querySelector(".average").addEventListener("input", calculateGeneralAverage);
+document.querySelector(".average").addEventListener("input", calculateTermAverage);
 
 const grades = `
 <option value="0">Not</option>
@@ -64,7 +68,8 @@ function updateHtml() {
     removeButton.classList.add("material-symbols-outlined", "icon", "lesson-item");
     removeButton.addEventListener("click", function() {
         lessonDiv.remove();
-        calculateAverage();
+        calculateGeneralAverage();
+        calculateTermAverage();
     });
 
     const retakeLabel = document.createElement("label");
@@ -82,7 +87,8 @@ function updateHtml() {
     retakeGrade.disabled = true;
 
     checkbox.addEventListener("change", function() {
-        calculateAverage();
+        calculateGeneralAverage();
+        calculateTermAverage();
         if(checkbox.checked) {
             retakeGrade.disabled = false;
         } else {
@@ -94,10 +100,11 @@ function updateHtml() {
 
     lessonDiv.append(lessonName, lessonGrade, lessonCredit, retakeLabel, checkbox, retakeGrade, removeButton);
     index++;
-    calculateAverage();
+    calculateGeneralAverage();
+    calculateTermAverage();
 }
 
-function calculateAverage() {
+function calculateGeneralAverage() {
     const creditInput = document.querySelector(".credit");
     const averageInput = document.querySelector(".average");
     let previousCredit = 0;
@@ -139,6 +146,39 @@ function calculateAverage() {
         average = gradeSum / creditSum;
     }
 
-    const result = document.querySelector("#result");
-    result.innerText = average.toFixed(2);
+    const result = document.querySelector("#general-average");
+    result.innerText = "Genel Not Ortalaması: " + average.toFixed(2);
+}
+
+function calculateTermAverage() {
+    const creditInput = document.querySelector(".credit");
+    const averageInput = document.querySelector(".average");
+    
+    let creditSum = 0;
+    let gradeSum = 0;
+    let average = 0
+
+    const lessonList = document.querySelectorAll(".lesson");
+
+    for (let i = 0; i < lessonList.length; i++) {
+        const lessonGrade = parseFloat(lessonList[i].querySelector(".lesson-grade").value);
+        const lessonCredit = parseFloat(lessonList[i].querySelector(".lesson-credit").value);
+        const checkbox = lessonList[i].querySelector(".checkbox");
+
+        if (checkbox.checked) {
+            const retakeGrade = parseFloat(lessonList[i].querySelector(".retake-grade").value);
+            creditSum -= lessonCredit;
+            gradeSum -= retakeGrade * lessonCredit;
+        }
+
+        gradeSum += lessonGrade * lessonCredit;
+        creditSum += lessonCredit;
+    }
+
+    if (creditSum > 0) {
+        average = gradeSum / creditSum;
+    }
+
+    const result = document.querySelector("#term-average");
+    result.innerText = "Dönem Not Ortalaması: " + average.toFixed(2);
 }

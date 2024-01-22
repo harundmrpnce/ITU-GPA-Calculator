@@ -100,6 +100,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 15vh;
 }
 
 .lesson:first-child {
@@ -160,7 +161,12 @@ main {
     box-shadow: none;
 }
 
-#result {
+#general-average {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+#term-average {
     margin-bottom: 24px;
     font-size: 24px;
 }
