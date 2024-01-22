@@ -151,9 +151,6 @@ function calculateGeneralAverage() {
 }
 
 function calculateTermAverage() {
-    const creditInput = document.querySelector(".credit");
-    const averageInput = document.querySelector(".average");
-    
     let creditSum = 0;
     let gradeSum = 0;
     let average = 0
@@ -163,14 +160,6 @@ function calculateTermAverage() {
     for (let i = 0; i < lessonList.length; i++) {
         const lessonGrade = parseFloat(lessonList[i].querySelector(".lesson-grade").value);
         const lessonCredit = parseFloat(lessonList[i].querySelector(".lesson-credit").value);
-        const checkbox = lessonList[i].querySelector(".checkbox");
-
-        if (checkbox.checked) {
-            const retakeGrade = parseFloat(lessonList[i].querySelector(".retake-grade").value);
-            creditSum -= lessonCredit;
-            gradeSum -= retakeGrade * lessonCredit;
-        }
-
         gradeSum += lessonGrade * lessonCredit;
         creditSum += lessonCredit;
     }
